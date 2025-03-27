@@ -118,8 +118,8 @@ def clean_codegen(dataset):
 
 
 def clean_starcoder(dataset):
-    main_path = f'/home/scai/mtech/aib222684/MTP/output_cot_orig_full/StarCoder/{dataset}'
-    output_path = '/home/scai/mtech/aib222684/MTP/output_cot_orig/StarCoder/'
+    main_path = f'/home/scai/output_cot_orig_full/StarCoder/{dataset}'
+    output_path = '/home/scai/output_cot_orig/StarCoder/'
 
     files = list_files(main_path)
 
@@ -234,7 +234,7 @@ def clean_new_models(dataset):#granite-20b-code-instruct
     EXTENSIONS = { "C": ".c", "C++": ".cpp", "Java": ".java", "Python": ".py", "Go": ".go" }
     extn= EXTENSIONS[args.target_lang]
     main_path = f"/home/codetrans/Project/data/codetlingua/{args.approach}/{dataset}/{args.model}/{args.source_lang}/{args.target_lang}/temperature_0.0"
-    # output_path= "/scratch/cse/dual/cs5190439/MTP1/PLTranslation_data/codetlingua/autocot2d/avatar/starcoder/Python/Java/temperature_0/"
+   
     # print(main_path)
     output_path =main_path +'/'
     cur_folder_path = main_path
@@ -403,7 +403,7 @@ def clean_codellama(dataset, args):
     # Use the correct model name with the correct casing
     main_path = f"/home/codetrans/Project/data/codetlingua/{args.approach}/{dataset}/codellama-13b-instruct-hf/{source_lang}/{target_lang}/temperature_0.0"
 
-    # main_path = f"/home/scai/mtech/aib232083/AJAY/Project/dataset/{dataset}/{source_lang}/Code"
+    # main_path = f"/home/Project/dataset/{dataset}/{source_lang}/Code"
     
     # print(f"Main Path: {main_path}")  # Debug
     # print(f"Main Path exists: {os.path.exists(main_path)}")  # Debug
@@ -942,7 +942,7 @@ if __name__ == "__main__":
     main(args)
 
 '''
-python3 /home/cse/dual/cs5190439/MTP1/codetlingua/clean_generations.py --source_lang Python --target_lang Java --model starcoder --approach autocot2d --dataset avatar
+python3 /home/codetlingua/clean_generations.py --source_lang Python --target_lang Java --model starcoder --approach autocot2d --dataset avatar
 granite-20b-code-instruct
 starcoder
 granite-8b-code-instruct
